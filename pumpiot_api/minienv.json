@@ -1,0 +1,22 @@
+{
+  "editor" : {
+    "hide": false,
+    "srcDir": "src/app"
+  },
+  "proxy": {
+    "ports": [
+      {
+        "port": 28015,
+        "hide": false,
+        "name": "RethinkDB",
+        "path": "/"
+      },
+      {
+        "port": 5000,
+        "hide": false,
+        "name": "CRUD",
+        "path": "/"
+      }
+    ]
+  }
+}

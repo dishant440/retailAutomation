@@ -1,0 +1,12 @@
+export const LOADING = "LOADING";
+export const PUMPS = "PUMPS";
+export const DATA = "DATA";
+export const TEAMS = "TEAMS";
+export const RELOAD = "RELOAD";
+export const EMPLOYEES = "EMPLOYEES";
+export const SHIFTS = "SHIFTS";
+export const SHIFTS_TODAY = "SHIFTS_TODAY";
+export const PRICETODAY = "PRICETODAY";
+export const TRX = "TRX";
+export const LASTTRX = "LASTTRX"; //latest trx from socket
+export const SETTINGS = "SETTINGS";

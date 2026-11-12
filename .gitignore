@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Production builds
+build/
+*/build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database active volume (use db_seed.tar.gz for initial seed data)
+pumpiot_api/docker/db_data/
+docker/db_data/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# System & IDE files
+.DS_Store
+.idea/
+.vscode/

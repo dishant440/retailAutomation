@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: rethinkdb:latest
+    ports:
+      - "8085:8080"
+      - "28015:28015"
+      - "29015:29015"
+    volumes:
+      - ./docker/db_data:/data
+#  web:
+#    image: node:alpine
+#    volumes:
+#      - ./api:/usr/api
+#      - ./api/node_modules:/usr/api/node_modules
+#      - ./docker/startup:/usr/init
+#    working_dir: /usr/api
+#    environment:
+#      - NPM_PROXY_CACHE=${MINIENV_NPM_PROXY_CACHE}
+#    ports:
+#      - "5000:5000"
+#    depends_on:
+#      - db
