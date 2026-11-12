@@ -30,16 +30,7 @@ app.use(helmet({
 // enabling CORS for all requests
 app.use(cors({
     credentials: true,
-    origin: [
-        "*",
-        "http://localhost:5000",
-        "http://localhost:3000",
-        "http://localhost:3001",
-        "http://localhost:3002",
-        "http://localhost:5001",
-        "http://localhost:28015",
-        "http://localhost:80"
-    ]
+    origin: true
 }));
 
 // adding morgan to log HTTP requests

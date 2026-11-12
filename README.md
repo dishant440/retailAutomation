@@ -55,7 +55,35 @@ Retail Automation Files_TamalDey/
 
 ## Quick Start Guide
 
-### 1. Start the Database (RethinkDB)
+### Option A: Using the Root Script (Recommended)
+
+Run the full stack (RethinkDB, API, and Frontend) in Docker with a single command from the root directory:
+
+```bash
+# Start all services
+./run.sh start
+
+# Check service status
+./run.sh status
+
+# View live logs
+./run.sh logs
+
+# Stop all services
+./run.sh stop
+```
+
+---
+
+### Option B: Using Docker Compose directly
+
+```bash
+docker compose up -d --build
+```
+
+---
+
+### Option C: Manual / Local Development Mode
 
 In `pumpiot_api`:
 ```bash

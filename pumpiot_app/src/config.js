@@ -1,6 +1,10 @@
 const URLParams = new URLSearchParams(window.location.href);
 
-const API_REALM = process.env.REACT_APP_API_REALM || 'http://localhost:5001';
+const API_REALM = process.env.REACT_APP_API_REALM || (
+    typeof window !== 'undefined' && window.location && window.location.hostname
+        ? `${window.location.protocol}//${window.location.hostname}:5001`
+        : 'http://localhost:5001'
+);
 
 // Configs
 export const config = {

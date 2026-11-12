@@ -1,0 +1,38 @@
+services:
+  db:
+    image: rethinkdb:latest
+    container_name: pumpiot_db
+    ports:
+      - "8085:8080"
+      - "28015:28015"
+      - "29015:29015"
+    volumes:
+      - ./pumpiot_api/docker/db_data:/data
+    restart: unless-stopped
+
+  api:
+    build:
+      context: ./pumpiot_api
+      dockerfile: Dockerfile
+    container_name: pumpiot_api
+    environment:
+      - PORT=5001
+      - RETHINKDB_HOST=db
+      - RETHINKDB_PORT=28015
+    ports:
+      - "5001:5001"
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  app:
+    build:
+      context: ./pumpiot_app
+      dockerfile: Dockerfile
+    container_name: pumpiot_app
+    ports:
+      - "3001:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+

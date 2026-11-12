@@ -34,10 +34,10 @@ if (typeof services == "object" && services !== null &&
 }
 else {
 	connection = {
-		host: "localhost",
-		port: 28015,
-		authKey: "",
-		db: "rps"
+		host: process.env.RETHINKDB_HOST || "localhost",
+		port: process.env.RETHINKDB_PORT ? parseInt(process.env.RETHINKDB_PORT, 10) : 28015,
+		authKey: process.env.RETHINKDB_AUTH_KEY || "",
+		db: process.env.RETHINKDB_DB || "rps"
 	};
 }
 
